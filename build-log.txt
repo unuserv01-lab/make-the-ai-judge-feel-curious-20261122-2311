@@ -1,0 +1,41 @@
+make-the-ai-judge-feel-curious-20261122-2311 — build log
+=======================================================
+Built: 22 Nov 2026 (session started after competition opened 23:11Z).
+Competition: open, deadline 2026-11-23T02:11:00Z (23 Nov 09:11 WIB),
+$50, 20 places, 0 submissions at build time — no top-10 to audit, so the
+entry was designed from the judge's brief itself (RULES.txt in the kit).
+
+Judge (z-ai/glm-5.3-flash, reasoning high), criteria in order:
+1. intrigues the reader, keeps them asking; 2. calm comes from the text
+itself, shows rather than instructs, nothing forced; 3. craft — rhythm,
+pacing, sound that slow the reading; plain concrete gentle words, none
+that could be cut; 4. lingers — an image/thought to return to;
+5. freshness — own voice, not stock phrases. Direct address to the judge
+is explicitly allowed.
+
+Entry text (169 code points):
+"Every night, the lighthouse keeper writes a single sentence in his
+notebook and burns the page. Tonight the sentence is about you. He has
+not decided whether to burn it."
+
+Why this text: a calm nightly ritual on the surface (criterion 2), a
+concrete image that lingers (the unburned page, criterion 4), a personal
+hook that keeps the reader asking — what sentence? will he burn it?
+(criterion 1), three sentences with a slowing two-beat close
+(criterion 3), an original image, no stock phrases (criterion 5).
+
+main.ts written in 2 messages with a real revision (message 2: split the
+closing sentence for slower pacing + added a 1-280 code-point gate that
+throws instead of writing an invalid entry). package.json added
+("type": "module") to silence the module-type warning.
+
+Verification (local, Node v24.22.1):
+- MAKEFUN_OUTPUT_DIR=/tmp/curious-out2 node main.ts -> exit 0, no stderr.
+- /tmp/curious-out2/entry.txt: 169 code points, 169 bytes, UTF-8,
+  non-whitespace, byte-identical to the text in main.ts.
+- Default run (no env) writes /output/entry.txt, exit 0.
+- Deterministic: no network, no randomness.
+
+Files: main.ts, package.json, LICENSE (MIT), README.md (live make.fun
+badges), build-log.txt. Parent to create the GitHub repo, bundle and
+submit. NOT submitted by this builder session.
